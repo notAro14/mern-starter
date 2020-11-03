@@ -1,19 +1,30 @@
-import React from 'react'
+import React, { Suspense, lazy } from 'react'
 import ReactDOM from 'react-dom'
-import nietzsche from './images/nietzsche.png'
-import { Button, Image, TextBody, Title } from './components/Common/index'
+import { Router, Link } from '@reach/router'
+
+// import Home from './views/Home'
+// import Profile from './views/Profile'
+
+const Home = lazy(() => import('./views/Home'))
+const Profile = lazy(() => import('./views/Profile'))
 
 function App() {
-  const [reveal, setReveal] = React.useState(false)
   return (
     <div>
-      <Title>My own Webpack config for React</Title>
-      <TextBody>Hello world</TextBody>
-      <Button onClick={() => setReveal(!reveal)}>
-        {reveal ? 'Hide' : 'Reveal me'}
-      </Button>
-      <br />
-      {reveal && <Image src={nietzsche} />}
+      <ul>
+        <li>
+          <Link to='/'>Home</Link>
+        </li>
+        <li>
+          <Link to='/profile'>Profile</Link>
+        </li>
+      </ul>
+      <Suspense fallback={() => <div>Loading...</div>}>
+        <Router>
+          <Home path='/' />
+          <Profile path='/profile' />
+        </Router>
+      </Suspense>
     </div>
   )
 }

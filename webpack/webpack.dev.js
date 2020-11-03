@@ -6,6 +6,7 @@ const webpackCfgCommon = require('../webpack.config')
 module.exports = () =>
   merge(webpackCfgCommon, {
     mode: 'development',
+    devtool: 'inline-source-map',
     devServer: {
       historyApiFallback: true,
       contentBase: path.resolve(__dirname, './dist'),
@@ -17,16 +18,26 @@ module.exports = () =>
 
     module: {
       rules: [
-        // styling
         {
           test: /\.(css|scss)$/i,
-          use: ['style-loader', 'css-loader', 'postcss-loader', 'sass-loader'],
+          use: [
+            'style-loader',
+            {
+              loader: 'css-loader',
+              options: { sourceMap: true, importLoaders: 2 },
+            },
+            {
+              loader: 'postcss-loader',
+              options: { sourceMap: true },
+            },
+            {
+              loader: 'sass-loader',
+              options: { sourceMap: true },
+            },
+          ],
         },
       ],
     },
 
-    plugins: [
-      // Only update what has changed on hot reload
-      new webpack.HotModuleReplacementPlugin(),
-    ],
+    plugins: [new webpack.HotModuleReplacementPlugin()],
   })
