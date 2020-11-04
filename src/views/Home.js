@@ -1,4 +1,4 @@
-import React, { Suspense, lazy } from 'react'
+import React from 'react'
 import { Button, TextBody, Title, Image } from '../components/Common/index'
 import nietzsche from '../images/nietzsche.png'
 
