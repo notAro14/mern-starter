@@ -13,6 +13,7 @@ export function NavBar() {
     <NavBarContainer>
       <NavElement linkTo='/' textContent='Home' />
       <NavElement linkTo='/profile' textContent='Profile' />
+      <NavElement linkTo='/about' textContent='About' />
     </NavBarContainer>
   )
 }

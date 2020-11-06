@@ -1,6 +1,11 @@
+// node
 const path = require('path')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
+// plugins
+// const BundleAnalyzerPlugin = require('webpack-bundle-analyzer')
+// .BundleAnalyzerPlugin
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+const CompressionPlugin = require('compression-webpack-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { ProgressPlugin } = require('webpack')
 
 module.exports = {
@@ -23,6 +28,8 @@ module.exports = {
     }),
     new CleanWebpackPlugin(),
     new ProgressPlugin(),
+    new CompressionPlugin(),
+    // new BundleAnalyzerPlugin(),
   ],
   module: {
     rules: [
@@ -40,6 +47,10 @@ module.exports = {
         type: 'asset/inline',
       },
     ],
+  },
+  performance: {
+    maxEntrypointSize: 512000,
+    maxAssetSize: 512000,
   },
   resolve: {
     extensions: ['*', '.js', '.jsx'],
