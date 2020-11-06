@@ -1,25 +1,22 @@
 import React, { Suspense, lazy } from 'react'
 import ReactDOM from 'react-dom'
-import { Router, Link } from '@reach/router'
-
-// import Home from './views/Home'
-// import Profile from './views/Profile'
+import { Router } from '@reach/router'
+import { GlobalStyle } from './globalStyle'
+import { NavBar } from './components/NavBar'
 
 const Home = lazy(() => import('./views/Home'))
 const Profile = lazy(() => import('./views/Profile'))
 
+function Fallback() {
+  return <div>Loading...</div>
+}
+
 function App() {
   return (
     <div>
-      <ul>
-        <li>
-          <Link to='/'>Home</Link>
-        </li>
-        <li>
-          <Link to='/profile'>Profile</Link>
-        </li>
-      </ul>
-      <Suspense fallback={() => <div>Loading...</div>}>
+      <GlobalStyle />
+      <NavBar />
+      <Suspense fallback={<Fallback />}>
         <Router>
           <Home path='/' />
           <Profile path='/profile' />

@@ -1,29 +1,32 @@
 import styled from 'styled-components'
-
-export const Title = styled.h1`
-  font-family: fantasy;
-  color: dodgerblue;
-  text-transform: uppercase;
-`
-export const TextBody = styled.p`
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-`
-
-export const Image = styled.img`
-  min-width: 250px;
-  border-radius: 50%;
-`
+import { Link as RouterLink } from '@reach/router'
 
 export const Button = styled.button`
-  background-color: dodgerblue;
-  border: none;
+  background-color: #fff;
+  border: 1px solid #333;
   border-radius: 5px;
-  color: white;
+  color: #333;
+  cursor: pointer;
   display: block;
   font-weight: bold;
   min-width: 150px;
   outline: none;
   padding: 0.75rem 0;
-  text-transform: uppercase;
-  cursor: pointer;
+`
+export const Image = styled.img`
+  border-radius: 50%;
+  max-width: 200px;
+`
+export const Link = styled(RouterLink)`
+  color: green;
+  text-decoration: none;
+`
+export const TextBody = styled.p`
+  color: #333;
+  line-height: 2;
+  text-align: justify;
+  margin-bottom: 1rem;
+`
+export const Title = styled.h1`
+  color: black;
 `
