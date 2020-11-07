@@ -11,7 +11,7 @@ module.exports = () => {
   return merge(webpackCfgCommon, {
     // devtool: 'source-map',
     output: {
-      path: path.resolve(__dirname, '../docs'),
+      path: path.resolve(__dirname, '../dist'),
       filename: 'js/[name].[contenthash].bundle.js',
     },
     module: {
