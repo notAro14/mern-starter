@@ -11,7 +11,7 @@ module.exports = {
     main: path.resolve(__dirname, './src/index.js'),
   },
   output: {
-    path: path.resolve(__dirname, './dist'),
+    path: path.resolve(__dirname, './docs'),
     filename: 'js/[name].bundle.js',
     assetModuleFilename: 'images/[hash][ext][query]',
   },
