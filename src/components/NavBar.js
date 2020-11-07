@@ -1,19 +1,13 @@
 import React from 'react'
-import styled from 'styled-components'
 import { NavElement } from './NavElement'
-
-const NavBarContainer = styled.ul`
-  align-items: center;
-  display: flex;
-  margin-bottom: 0.9rem;
-`
+import classes from '../styles/common.module.scss'
 
 export function NavBar() {
   return (
-    <NavBarContainer>
+    <ul className={classes.navbar}>
       <NavElement linkTo='/' textContent='Home' />
       <NavElement linkTo='/profile' textContent='Profile' />
       <NavElement linkTo='/about' textContent='About' />
-    </NavBarContainer>
+    </ul>
   )
 }

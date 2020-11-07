@@ -3,8 +3,9 @@ import ReactDOM from 'react-dom'
 // router
 import { Router } from '@reach/router'
 // components
-import { GlobalStyle } from './globalStyle'
 import { NavBar } from './components/NavBar'
+// styles
+import './main.scss'
 
 const Home = lazy(() => import('./views/Home'))
 const About = lazy(() => import('./views/About'))
@@ -17,7 +18,6 @@ function Fallback() {
 function App() {
   return (
     <div>
-      <GlobalStyle />
       <NavBar />
       <Suspense fallback={<Fallback />}>
         <Router>
