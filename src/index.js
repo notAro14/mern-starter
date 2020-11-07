@@ -5,7 +5,7 @@ import { Router } from '@reach/router'
 // components
 import { NavBar } from './components/NavBar'
 // styles
-import './globalStyle.scss'
+import './main.scss'
 
 const Home = lazy(() => import('./views/Home'))
 const About = lazy(() => import('./views/About'))

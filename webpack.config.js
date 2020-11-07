@@ -1,8 +1,8 @@
 // node
 const path = require('path')
 // plugins
-// const BundleAnalyzerPlugin = require('webpack-bundle-analyzer')
-// .BundleAnalyzerPlugin
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer')
+  .BundleAnalyzerPlugin
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const CompressionPlugin = require('compression-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
@@ -29,7 +29,7 @@ module.exports = {
     new CleanWebpackPlugin(),
     new ProgressPlugin(),
     new CompressionPlugin(),
-    // new BundleAnalyzerPlugin(),
+    new BundleAnalyzerPlugin(),
   ],
   module: {
     rules: [

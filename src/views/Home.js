@@ -1,13 +1,14 @@
 import React from 'react'
-import { Button, TextBody, Title, Image } from '../components/Common/index'
 import nietzsche from '../images/nietzsche.png'
+import classes from '../styles/common.module.scss'
 
 export default () => {
   const [reveal, setReveal] = React.useState(false)
+  const { title, textBody, button, image } = classes
   return (
     <div>
-      <Title>Webpack config for React</Title>
-      <TextBody>
+      <h1 className={title}>Webpack config for React</h1>
+      <p className={textBody}>
         Cat ipsum dolor sit amet,
         ccccccccccccaaaaaaaaaaaaaaatttttttttttttttttssssssssssssssss so pee on
         walls it smells like breakfast scamper. Lick the curtain just to be
@@ -15,18 +16,18 @@ export default () => {
         upside-down yet rub against owner because nose is wet. Snuggles up to
         shoulders or knees and purrs you to sleep human is behind a closed door,
         emergency! abandoned! meeooowwww!!!.
-      </TextBody>
-      <TextBody>
+      </p>
+      <p className={textBody}>
         While happily ignoring when being called chase the pig around the house.
         Chase red laser dot scratch the postman wake up lick paw wake up owner
         meow meow or eat the rubberband stare out the window love you, then bite
         you yet meow meow, i tell my human.
-      </TextBody>
-      <Button onClick={() => setReveal(!reveal)}>
+      </p>
+      <button className={button} onClick={() => setReveal(!reveal)}>
         {reveal ? 'Hide' : 'Reveal me'}
-      </Button>
+      </button>
       <br />
-      {reveal && <Image src={nietzsche} />}
+      {reveal && <img className={image} src={nietzsche} />}
     </div>
   )
 }

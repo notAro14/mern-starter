@@ -1,20 +1,13 @@
 import React from 'react'
-import styled from 'styled-components'
-import { Link } from './Common'
+import { Link } from '@reach/router'
+import classes from '../styles/common.module.scss'
 
-const NavElementContainer = styled.li`
-  border-bottom: 1px solid transparent;
-  margin-right: 1rem;
-  padding-bottom: 0.5rem;
-  transition: all ease-in 150ms;
-  &:hover {
-    border-bottom: 1px solid green;
-  }
-`
 export function NavElement({ linkTo, textContent }) {
   return (
-    <NavElementContainer>
-      <Link to={linkTo}>{textContent}</Link>
-    </NavElementContainer>
+    <li className={classes['navbar-element']}>
+      <Link className={classes.link} to={linkTo}>
+        {textContent}
+      </Link>
+    </li>
   )
 }
