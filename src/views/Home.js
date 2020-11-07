@@ -1,6 +1,9 @@
-import React from 'react'
-import nietzsche from '../images/nietzsche.png'
+import React, { Suspense, lazy } from 'react'
 import classes from '../styles/common.module.scss'
+import Fallback from '../components/Fallback'
+
+// lazy loads
+const Nietzsche = lazy(() => import('../components/Nietzsche'))
 
 export default () => {
   const [reveal, setReveal] = React.useState(false)
@@ -27,7 +30,7 @@ export default () => {
         {reveal ? 'Hide' : 'Reveal me'}
       </button>
       <br />
-      {reveal && <img className={image} src={nietzsche} />}
+      <Suspense fallback={<Fallback />}>{reveal && <Nietzsche />}</Suspense>
     </div>
   )
 }

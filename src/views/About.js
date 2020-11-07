@@ -1,5 +1,9 @@
-import React from 'react'
+import React, { Suspense, lazy } from 'react'
 import classes from '../styles/common.module.scss'
+import Fallback from '../components/Fallback'
+
+// lazy loads
+const Zombie = lazy(() => import('../components/Zombie'))
 
 export default () => {
   const [reveal, setReveal] = React.useState(false)
@@ -16,6 +20,7 @@ export default () => {
         {reveal ? 'Hide' : 'Reveal me'}
       </button>
       <br />
+      <Suspense fallback={<Fallback />}>{reveal && <Zombie />}</Suspense>
     </div>
   )
 }
