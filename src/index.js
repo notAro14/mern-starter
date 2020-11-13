@@ -1,31 +1,15 @@
-import React, { Suspense, lazy } from 'react'
+import React from 'react'
 import ReactDOM from 'react-dom'
-// router
-import { Router } from '@reach/router'
-// components
-import { Navbar } from './components/Navbar'
+import App from './App'
 // styles
 import './main.scss'
 
-const HomePage = lazy(() => import('./views/HomePage'))
-const InstallationPage = lazy(() => import('./views/InstallationPage'))
-
-function Fallback() {
-  return <div>Loading...</div>
-}
-
-function App() {
+function Main() {
   return (
-    <div>
-      <Navbar />
-      <Suspense fallback={<Fallback />}>
-        <Router>
-          <HomePage path='/' />
-          <InstallationPage path='/installation' />
-        </Router>
-      </Suspense>
-    </div>
+    <React.StrictMode>
+      <App />
+    </React.StrictMode>
   )
 }
 
-ReactDOM.render(<App />, document.getElementById('root'))
+ReactDOM.render(<Main />, document.getElementById('root'))

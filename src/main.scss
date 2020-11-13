@@ -1,69 +1,46 @@
+// Global
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-
 html {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   scroll-behavior: smooth;
 }
-
 body {
   background-color: #eee;
-  padding: 2rem;
 }
-
 ul {
   list-style-type: none;
 }
-
-.button {
-  background-color: #fff;
-  border: 1px solid #333;
-  border-radius: 5px;
-  color: #333;
-  cursor: pointer;
-  display: block;
-  font-weight: bold;
-  min-width: 150px;
-  outline: none;
-  padding: 0.75rem 0;
-}
-
-.image {
-  border-radius: 50%;
-  max-width: 200px;
-}
-
-.link {
-  color: green;
-  text-decoration: none;
-}
-
-.textBody {
-  color: #333;
-  line-height: 2;
-  text-align: justify;
+h1 {
   margin-bottom: 1rem;
 }
-
-.title {
-  color: black;
-}
-
-.navbar {
-  align-items: center;
+// app
+#app {
+  height: 100vh;
   display: flex;
-  margin-bottom: 0.9rem;
-}
-
-.navbar-element {
-  border-bottom: 1px solid transparent;
-  margin-right: 1rem;
-  padding-bottom: 0.5rem;
-  transition: all ease-in 150ms;
-  &:hover {
-    border-bottom: 1px solid green;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 1rem;
+  .link {
+    color: green;
+    text-decoration: none;
   }
+  .navbar {
+    align-items: center;
+    display: flex;
+    margin-bottom: 0.9rem;
+    .navbar-element {
+      margin-right: 1rem;
+    }
+  }
+}
+// pages
+#home-page,
+#installation-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }

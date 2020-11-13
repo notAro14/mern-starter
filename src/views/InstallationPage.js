@@ -2,7 +2,7 @@ import React from 'react'
 
 export default () => {
   return (
-    <div>
+    <div id='installation-page'>
       <h1>Installation</h1>
       <p>
         Clone this{' '}
