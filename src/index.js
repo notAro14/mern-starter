@@ -3,13 +3,12 @@ import ReactDOM from 'react-dom'
 // router
 import { Router } from '@reach/router'
 // components
-import { NavBar } from './components/NavBar'
+import { Navbar } from './components/Navbar'
 // styles
 import './main.scss'
 
-const Home = lazy(() => import('./views/Home'))
-const About = lazy(() => import('./views/About'))
-const Profile = lazy(() => import('./views/Profile'))
+const HomePage = lazy(() => import('./views/HomePage'))
+const InstallationPage = lazy(() => import('./views/InstallationPage'))
 
 function Fallback() {
   return <div>Loading...</div>
@@ -18,12 +17,11 @@ function Fallback() {
 function App() {
   return (
     <div>
-      <NavBar />
+      <Navbar />
       <Suspense fallback={<Fallback />}>
         <Router>
-          <Home path='/' />
-          <About path='/about' />
-          <Profile path='/profile' />
+          <HomePage path='/' />
+          <InstallationPage path='/installation' />
         </Router>
       </Suspense>
     </div>
