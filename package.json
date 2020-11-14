@@ -4,6 +4,8 @@
   "description": "Webpack Boilerplate for React",
   "private": true,
   "scripts": {
+    "format": "yarn run prettier --write .",
+    "format:check": "yarn run prettier --check .",
     "build": "cross-env NODE_ENV=production webpack --config webpack/webpack.prod.js",
     "build:analyze": "webpack --analyze --config webpack/webpack.prod.js",
     "start": "cross-env NODE_ENV=development webpack serve --config webpack/webpack.dev.js",
@@ -29,6 +31,7 @@
     "optimize-css-assets-webpack-plugin": "^5.0.4",
     "postcss-loader": "^4.0.4",
     "postcss-preset-env": "^6.7.0",
+    "prettier": "^2.1.2",
     "sass": "^1.29.0",
     "sass-loader": "^10.0.4",
     "style-loader": "^2.0.0",
