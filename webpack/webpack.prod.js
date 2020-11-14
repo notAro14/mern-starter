@@ -3,13 +3,15 @@ const path = require('path')
 // plugins
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin')
+const TerserPlugin = require('terser-webpack-plugin')
 // webpack
 const { merge } = require('webpack-merge')
 const webpackCfgCommon = require('../webpack.config')
 
 module.exports = () => {
   return merge(webpackCfgCommon, {
-    // devtool: 'source-map',
+    mode: 'production',
+    devtool: 'source-map',
     output: {
       path: path.resolve(__dirname, '../dist'),
       filename: 'js/[name].[contenthash].bundle.js',
@@ -31,12 +33,18 @@ module.exports = () => {
       ],
     },
     optimization: {
+      usedExports: true,
       minimize: true,
-      minimizer: [new OptimizeCssAssetsPlugin()],
-      // runtimeChunk: {
-      //   name: 'runtime',
-      // },
-      runtimeChunk: 'single',
+      minimizer: [
+        new OptimizeCssAssetsPlugin(),
+        new TerserPlugin({
+          test: /\.(js|jsx)$/i,
+          parallel: true,
+        }),
+      ],
+      runtimeChunk: {
+        name: 'runtime',
+      },
       moduleIds: 'deterministic',
       splitChunks: {
         cacheGroups: {
