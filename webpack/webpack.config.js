@@ -7,9 +7,9 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { ProgressPlugin } = require('webpack')
 
 module.exports = {
-  entry: ['@babel/polyfill', './src/index.js'],
+  entry: ['@babel/polyfill', path.resolve(__dirname, '../src/index.js')],
   output: {
-    path: path.resolve(__dirname, './dist'),
+    path: path.resolve(__dirname, '../dist'),
     filename: 'js/[name].bundle.js',
     assetModuleFilename: 'images/[hash][ext][query]',
   },
@@ -18,8 +18,8 @@ module.exports = {
     // See this issue https://github.com/jantimon/html-webpack-plugin/issues/1523
     new HtmlWebpackPlugin({
       title: 'Webpack Boilerplate for React',
-      favicon: path.resolve(__dirname, './src/images/favicon.png'),
-      template: path.resolve(__dirname, './src/template.html'),
+      favicon: path.resolve(__dirname, '../src/images/favicon.png'),
+      template: path.resolve(__dirname, '../src/template.html'),
       filename: 'index.html',
     }),
     new CleanWebpackPlugin(),

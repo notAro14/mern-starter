@@ -6,7 +6,7 @@ const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 const TerserPlugin = require('terser-webpack-plugin')
 // webpack
 const { merge } = require('webpack-merge')
-const webpackCfgCommon = require('../webpack.config')
+const webpackCfgCommon = require('./webpack.config')
 
 module.exports = () => {
   return merge(webpackCfgCommon, {
