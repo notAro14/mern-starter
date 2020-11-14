@@ -2,20 +2,31 @@
 
 Use Webpack 5 to kick off your React projects
 
+Pre requisites:
+
+- node
+- yarn
+
 Install
 
 ```bash
-npm install
+yarn
 ```
 
 Development
 
 ```bash
-npm start
+yarn start
 ```
 
 Build
 
 ```bash
-npm run build
+yarn run build
+```
+
+Format:
+
+```bash
+yarn run format
 ```

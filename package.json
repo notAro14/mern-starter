@@ -11,7 +11,11 @@
     "start": "yarn run format:check & cross-env NODE_ENV=development webpack serve --config webpack/webpack.dev.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
+  "keywords": [
+    "webpack",
+    "react",
+    "boilerplate"
+  ],
   "author": "Aro Andriamaro",
   "license": "ISC",
   "devDependencies": {
