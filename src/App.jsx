@@ -2,8 +2,8 @@ import React, { Suspense, lazy } from 'react';
 // router
 import { Router } from '@reach/router';
 // components
-import { Navbar } from './components/Navbar';
-import { Loading } from './components/Loading';
+import Navbar from './components/Navbar';
+import Loading from './components/Loading';
 
 const HomePage = lazy(() => import('./views/HomePage'));
 const InstallationPage = lazy(() => import('./views/InstallationPage'));

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from '@reach/router';
 
-export function Navbar() {
+export default function Navbar() {
   return (
     <ul className="navbar">
       <li className="navbar-element">
