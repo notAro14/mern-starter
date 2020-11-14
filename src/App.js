@@ -10,12 +10,12 @@ const InstallationPage = lazy(() => import('./views/InstallationPage'))
 
 export default () => {
   return (
-    <div id='app'>
+    <div id="app">
       <Navbar />
       <Suspense fallback={<Loading />}>
         <Router>
-          <HomePage path='/' />
-          <InstallationPage path='/installation' />
+          <HomePage path="/" />
+          <InstallationPage path="/installation" />
         </Router>
       </Suspense>
     </div>
