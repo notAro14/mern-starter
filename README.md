@@ -25,8 +25,23 @@ Build
 yarn run build
 ```
 
-Format:
+Format with Prettier:
 
 ```bash
 yarn run format
 ```
+
+Lint with Eslint
+
+```bash
+yarn run lint
+```
+
+Dependencies:
+
+- React 17
+- Webpack 5
+- Loaders : babel-loader, sass-loader (dart-sass), style-loader, css-loader, postcss-loader
+- ESlint: airbnb, react, prettier compatible
+- Router : @reach/router
+- Pre commit Hook : husky, lint-staged
