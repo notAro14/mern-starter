@@ -6,9 +6,9 @@
   "scripts": {
     "format": "yarn run prettier --write .",
     "format:check": "yarn run prettier --check .",
-    "build": "cross-env NODE_ENV=production webpack --config webpack/webpack.prod.js",
+    "build": "yarn run format:check & cross-env NODE_ENV=production webpack --config webpack/webpack.prod.js",
     "build:analyze": "webpack --analyze --config webpack/webpack.prod.js",
-    "start": "cross-env NODE_ENV=development webpack serve --config webpack/webpack.dev.js",
+    "start": "yarn run format:check & cross-env NODE_ENV=development webpack serve --config webpack/webpack.dev.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
