@@ -1,9 +1,9 @@
 // node
-const path = require('path')
+const path = require('path');
 // webpack
-const webpack = require('webpack')
-const { merge } = require('webpack-merge')
-const webpackCfgCommon = require('./webpack.config')
+const webpack = require('webpack');
+const { merge } = require('webpack-merge');
+const webpackCfgCommon = require('./webpack.config');
 
 module.exports = () =>
   merge(webpackCfgCommon, {
@@ -42,4 +42,4 @@ module.exports = () =>
     },
 
     plugins: [new webpack.HotModuleReplacementPlugin()],
-  })
+  });

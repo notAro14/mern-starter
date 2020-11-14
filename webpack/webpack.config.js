@@ -1,10 +1,10 @@
 // node
-const path = require('path')
+const path = require('path');
 // plugins
-const { CleanWebpackPlugin } = require('clean-webpack-plugin')
-const CompressionPlugin = require('compression-webpack-plugin')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
-const { ProgressPlugin } = require('webpack')
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const CompressionPlugin = require('compression-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { ProgressPlugin } = require('webpack');
 
 module.exports = {
   entry: ['@babel/polyfill', path.resolve(__dirname, '../src/index.js')],
@@ -50,4 +50,4 @@ module.exports = {
   resolve: {
     extensions: ['*', '.js', '.jsx'],
   },
-}
+};

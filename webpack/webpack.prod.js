@@ -1,12 +1,12 @@
 // node
-const path = require('path')
+const path = require('path');
 // plugins
-const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin')
-const TerserPlugin = require('terser-webpack-plugin')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
 // webpack
-const { merge } = require('webpack-merge')
-const webpackCfgCommon = require('./webpack.config')
+const { merge } = require('webpack-merge');
+const webpackCfgCommon = require('./webpack.config');
 
 module.exports = () => {
   return merge(webpackCfgCommon, {
@@ -61,5 +61,5 @@ module.exports = () => {
         filename: 'styles/[name].[contenthash].css',
       }),
     ],
-  })
-}
+  });
+};
