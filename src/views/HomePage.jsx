@@ -8,7 +8,7 @@ export default () => (
       Webpack 5.
     </p>
     <p>
-      This is heavily inspired on Tania Rascia&apos;s{' '}
+      This is heavily inspired by Tania Rascia&apos;s{' '}
       <a
         href="https://github.com/taniarascia/webpack-boilerplate"
         rel="noopener noreferrer"
