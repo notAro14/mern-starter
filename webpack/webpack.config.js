@@ -7,7 +7,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { ProgressPlugin } = require('webpack');
 
 module.exports = {
-  entry: ['@babel/polyfill', path.resolve(__dirname, '../src/index')],
+  entry: path.resolve(__dirname, '../src/index'),
   output: {
     path: path.resolve(__dirname, '../dist'),
     filename: 'js/[name].bundle.js',
