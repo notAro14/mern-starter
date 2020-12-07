@@ -4,12 +4,9 @@ import App from './App';
 // styles
 import './main.scss';
 
-function Main() {
-  return (
-    <React.StrictMode>
-      <App />
-    </React.StrictMode>
-  );
-}
-
-ReactDOM.render(<Main />, document.getElementById('root'));
+ReactDOM.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
+  document.getElementById('root')
+);

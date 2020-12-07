@@ -1,9 +1,8 @@
 import React, { Suspense, lazy } from 'react';
 // router
-import { Router } from '@reach/router';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 // components
-import Navbar from './components/Navbar';
-import Loading from './components/Loading';
+import { Loading, Navbar, NotFound } from './components';
 
 const HomePage = lazy(() => import('./views/HomePage'));
 const InstallationPage = lazy(() => import('./views/InstallationPage'));
@@ -11,13 +10,22 @@ const InstallationPage = lazy(() => import('./views/InstallationPage'));
 export default () => {
   return (
     <div id="app">
-      <Navbar />
-      <Suspense fallback={<Loading />}>
-        <Router>
-          <HomePage path="/" />
-          <InstallationPage path="/installation" />
-        </Router>
-      </Suspense>
+      <Router>
+        <Navbar />
+        <Switch>
+          <Suspense fallback={<Loading />}>
+            <Route exact path="/">
+              <HomePage />
+            </Route>
+            <Route exact path="/installation">
+              <InstallationPage />
+            </Route>
+            <Route>
+              <NotFound />
+            </Route>
+          </Suspense>
+        </Switch>
+      </Router>
     </div>
   );
 };

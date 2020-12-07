@@ -1,7 +1,7 @@
 import React from 'react';
-import { Link } from '@reach/router';
+import { Link } from 'react-router-dom';
 
-export default function Navbar() {
+const Navbar = () => {
   return (
     <ul className="navbar">
       <li className="navbar-element">
@@ -16,4 +16,6 @@ export default function Navbar() {
       </li>
     </ul>
   );
-}
+};
+
+export default Navbar;
