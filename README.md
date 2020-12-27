@@ -43,5 +43,5 @@ Dependencies:
 - Webpack 5
 - Loaders : babel-loader, sass-loader (dart-sass), style-loader, css-loader, postcss-loader
 - ESlint: airbnb, react, prettier compatible
-- Router : @reach/router
+- Router : react-router-dom
 - Pre commit Hook : husky, lint-staged
