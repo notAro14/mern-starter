@@ -5,6 +5,7 @@
   "private": true,
   "scripts": {
     "analyze": "webpack-bundle-analyzer stats.json dist",
+    "serve": "npx http-server dist",
     "build": "npm-run-all format lint test prod",
     "dev": "cross-env NODE_ENV=development webpack serve --config webpack/webpack.dev.js",
     "format": "yarn run prettier --write .",
