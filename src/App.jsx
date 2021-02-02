@@ -4,8 +4,12 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 // components
 import { Loading, Navbar, NotFound } from './components';
 
-const HomePage = lazy(() => import('./views/HomePage'));
-const InstallationPage = lazy(() => import('./views/InstallationPage'));
+const HomePage = lazy(() =>
+  import(/* webpackChunkName: "HomePage" */ './views/HomePage')
+);
+const InstallationPage = lazy(() =>
+  import(/* webpackChunkName: "InstallationPage" */ './views/InstallationPage')
+);
 
 export default () => {
   return (
