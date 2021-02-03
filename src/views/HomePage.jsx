@@ -1,7 +1,8 @@
 import React from 'react';
+import { ExternalLink } from '../components/Link/Link';
 
-export default () => (
-  <div id="home-page">
+const HomePage = () => (
+  <div>
     <h1>Webpack config for React</h1>
     <p>
       Boostrap your React project with this Boilerplate. It uses React 17 and
@@ -9,14 +10,12 @@ export default () => (
     </p>
     <p>
       This is heavily inspired by Tania Rascia&apos;s{' '}
-      <a
-        href="https://github.com/taniarascia/webpack-boilerplate"
-        rel="noopener noreferrer"
-        target="_blank"
-      >
+      <ExternalLink href="https://github.com/taniarascia/webpack-boilerplate">
         boilerplate
-      </a>
+      </ExternalLink>
       .
     </p>
   </div>
 );
+
+export default HomePage;

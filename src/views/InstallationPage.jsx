@@ -1,17 +1,16 @@
 import React from 'react';
+import { ExternalLink } from '../components/Link/Link';
 
-export default () => (
-  <div id="installation-page">
+const InstallationPage = () => (
+  <div>
     <h1>Installation</h1>
     <p>
       Clone this{' '}
-      <a
-        href="https://github.com/notAro14/webpack-react-boilerplate"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
+      <ExternalLink href="https://github.com/notAro14/webpack-react-boilerplate">
         repo.
-      </a>
+      </ExternalLink>
     </p>
   </div>
 );
+
+export default InstallationPage;
