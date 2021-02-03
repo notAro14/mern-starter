@@ -1,8 +1,8 @@
 import React, { Suspense, lazy } from 'react';
-// router
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-// components
-import { Loading, Navbar, NotFound } from './components';
+
+import Loading from './components/Loading/Loading';
+import Layout from './components/Layout/Layout';
 
 const HomePage = lazy(() =>
   import(/* webpackChunkName: "HomePage" */ './views/HomePage')
@@ -10,26 +10,22 @@ const HomePage = lazy(() =>
 const InstallationPage = lazy(() =>
   import(/* webpackChunkName: "InstallationPage" */ './views/InstallationPage')
 );
+const NotFoundPage = lazy(() =>
+  import(/* webpackChunkName: "NotFoundPage" */ './views/NotFoundPage')
+);
 
 export default () => {
   return (
-    <div id="app">
-      <Router>
-        <Navbar />
-        <Switch>
-          <Suspense fallback={<Loading />}>
-            <Route exact path="/">
-              <HomePage />
-            </Route>
-            <Route exact path="/installation">
-              <InstallationPage />
-            </Route>
-            <Route>
-              <NotFound />
-            </Route>
-          </Suspense>
-        </Switch>
-      </Router>
-    </div>
+    <Router>
+      <Layout>
+        <Suspense fallback={<Loading />}>
+          <Switch>
+            <Route exact path="/" component={HomePage} />
+            <Route exact path="/installation" component={InstallationPage} />
+            <Route path="*" component={NotFoundPage} />
+          </Switch>
+        </Suspense>
+      </Layout>
+    </Router>
   );
 };
