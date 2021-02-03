@@ -6,11 +6,12 @@
   "scripts": {
     "analyze": "webpack-bundle-analyzer stats.json dist",
     "serve": "npx http-server dist",
-    "build": "npm-run-all format lint test prod",
+    "prod": "npm-run-all format lint test build",
     "dev": "cross-env NODE_ENV=development webpack serve --config webpack/webpack.dev.js",
     "format": "yarn run prettier --write .",
     "lint": "eslint --ext .jsx,.js src/ webpack/",
-    "prod": "cross-env NODE_ENV=production webpack --config webpack/webpack.prod.js --profile --json > stats.json",
+    "build": "cross-env NODE_ENV=production webpack --config webpack/webpack.prod.js --profile --json > stats.json && yarn netlify-redirects",
+    "netlify-redirects": "cp src/_redirects dist/",
     "start": "npm-run-all format lint test dev",
     "test": "jest --coverage --passWithNoTests"
   },
