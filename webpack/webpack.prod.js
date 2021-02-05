@@ -2,8 +2,6 @@
 const path = require('path');
 // plugins
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
-const TerserPlugin = require('terser-webpack-plugin');
 // webpack
 const { merge } = require('webpack-merge');
 const webpackCfgCommon = require('./webpack.config');
@@ -22,10 +20,7 @@ module.exports = () => {
           test: /\.(css|scss)$/i,
           use: [
             MiniCssExtractPlugin.loader,
-            {
-              loader: 'css-loader',
-              options: { sourceMap: false, importLoaders: 2 },
-            },
+            'css-loader',
             'postcss-loader',
             'sass-loader',
           ],
@@ -33,22 +28,13 @@ module.exports = () => {
       ],
     },
     optimization: {
-      usedExports: true,
-      minimize: true,
-      minimizer: [
-        new OptimizeCssAssetsPlugin(),
-        new TerserPlugin({
-          test: /\.(js|jsx)$/i,
-          parallel: true,
-        }),
-      ],
       runtimeChunk: {
         name: 'runtime',
       },
       moduleIds: 'deterministic',
       splitChunks: {
         cacheGroups: {
-          vendor: {
+          vendors: {
             test: /[\\/]node_modules[\\/]/,
             name: 'vendors',
             chunks: 'all',

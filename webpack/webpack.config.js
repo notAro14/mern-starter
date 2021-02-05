@@ -2,7 +2,6 @@
 const path = require('path');
 // plugins
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const CompressionPlugin = require('compression-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { ProgressPlugin } = require('webpack');
 
@@ -24,7 +23,6 @@ module.exports = {
     }),
     new CleanWebpackPlugin(),
     new ProgressPlugin(),
-    new CompressionPlugin(),
   ],
   module: {
     rules: [
