@@ -5,7 +5,7 @@ import Navbar from '../Navbar/Navbar';
 
 const LayoutContainer = styled.div`
   height: 100vh;
-  padding: 0 100px;
+  padding: 0 200px;
   @media (max-width: 768px) {
     padding: 0 1rem;
   }
@@ -18,7 +18,7 @@ const GlobalStyles = createGlobalStyle`
   box-sizing: border-box;
 }
   html {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: sans-serif;
     scroll-behavior: smooth;
   }
   body {
@@ -26,9 +26,6 @@ const GlobalStyles = createGlobalStyle`
   }
   ul {
     list-style-type: none;
-  }
-  h1 {
-    margin-bottom: 1rem;
   }
 `;
 
