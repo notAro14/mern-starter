@@ -4,7 +4,9 @@
   "description": "Webpack Boilerplate for React",
   "private": true,
   "engines": {
-    "node": "14.x"
+    "node": "14.x",
+    "npm": "6.x",
+    "yarn": "1.x"
   },
   "scripts": {
     "analyze": "webpack-bundle-analyzer stats.json dist",
