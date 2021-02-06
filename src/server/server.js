@@ -1,7 +1,7 @@
 const path = require('path');
 const express = require('express');
 
-const PORT = process.env.PORT || 4001;
+const PORT = process.env.PORT || 4000;
 const app = express();
 
 if (process.env.NODE_ENV === 'production') {
@@ -12,4 +12,6 @@ if (process.env.NODE_ENV === 'production') {
   });
 }
 
-app.listen(PORT, () => console.log(`✨ Server is running on port ${PORT}.`));
+app.listen(PORT, () =>
+  console.log(`✨ Project is running at http://localhost:${PORT}/`)
+);
