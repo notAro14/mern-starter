@@ -2,52 +2,55 @@
 
 Use Webpack 5 to kick off your React projects
 
-Pre requisites:
+## Pre requisites:
 
 - node
 - yarn
 
-Install
+## Install
 
 ```bash
 yarn
 ```
 
-Run development
+## Run development
 
 ```bash
-yarn dev
+yarn start
 ```
 
-Build
+## Build
 
 ```bash
 yarn build
 ```
 
-Run production build
+## Serve production build
 
 ```bash
-yarn build && yarn start
+yarn build && yarn serve
 ```
 
-Format with Prettier:
+## Format (Prettier)
 
 ```bash
 yarn format
 ```
 
-Lint with Eslint
+## Lint (Eslint)
 
 ```bash
 yarn lint
 ```
 
-Dependencies:
+## Deploy
 
-- React 17
-- Webpack 5
-- Loaders : babel-loader, sass-loader, style-loader, css-loader, postcss-loader
-- ESlint: airbnb, react, prettier compatible
-- Router : react-router-dom
-- Pre commit Hook : husky, lint-staged
+### Without a server
+
+Deploy the static files in `dist/` folder at your prefered static hosting service (netlify, github pages, vercel, etc...).
+
+You just have to specify the build command which is `yarn build`
+
+### With a server
+
+Serve the files with Node. Refer to the `src/server/server.js` file. You can deploy to heroku.

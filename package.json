@@ -7,10 +7,10 @@
   "scripts": {
     "analyze": "webpack-bundle-analyzer stats.json dist",
     "build": "NODE_ENV=production webpack --config webpack/webpack.prod.js --profile --json > stats.json",
-    "dev": "NODE_ENV=development webpack serve --config webpack/webpack.dev.js",
+    "start": "NODE_ENV=development webpack serve --config webpack/webpack.dev.js",
     "format": "prettier --write .",
     "lint": "eslint --ext .jsx,.js src/ webpack/",
-    "start": "NODE_ENV=production node src/server/server.js",
+    "serve": "NODE_ENV=production node src/server/server.js",
     "test": "jest --coverage --passWithNoTests"
   },
   "keywords": [
