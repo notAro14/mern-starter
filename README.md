@@ -13,35 +13,41 @@ Install
 yarn
 ```
 
-Development
+Run development
 
 ```bash
-yarn start
+yarn dev
 ```
 
 Build
 
 ```bash
-yarn run build
+yarn build
+```
+
+Run production build
+
+```bash
+yarn build && yarn start
 ```
 
 Format with Prettier:
 
 ```bash
-yarn run format
+yarn format
 ```
 
 Lint with Eslint
 
 ```bash
-yarn run lint
+yarn lint
 ```
 
 Dependencies:
 
 - React 17
 - Webpack 5
-- Loaders : babel-loader, sass-loader (dart-sass), style-loader, css-loader, postcss-loader
+- Loaders : babel-loader, sass-loader, style-loader, css-loader, postcss-loader
 - ESlint: airbnb, react, prettier compatible
 - Router : react-router-dom
 - Pre commit Hook : husky, lint-staged
