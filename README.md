@@ -1,6 +1,6 @@
 # Webpack boilerplate for React
 
-Use Webpack 5 to kick off your React projects
+Use Webpack 5 to kick off your SPA React projects
 
 ## Pre requisites:
 
