@@ -4,6 +4,9 @@
   "description": "Webpack Boilerplate for React",
   "private": true,
   "main": "src/server.js",
+  "engines": {
+    "node": "14.x"
+  },
   "scripts": {
     "analyze": "webpack-bundle-analyzer stats.json dist",
     "build": "NODE_ENV=production webpack --config webpack/webpack.prod.js --profile --json > stats.json",
