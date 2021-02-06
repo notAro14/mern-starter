@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "Webpack Boilerplate for React",
   "private": true,
-  "main": "src/server.js",
   "engines": {
     "node": "14.x"
   },
