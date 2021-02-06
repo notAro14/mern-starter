@@ -5,7 +5,7 @@ import Heading from '../components/Heading/Heading';
 const HomePage = () => (
   <div>
     <Heading>Webpack config for React</Heading>
-    <P>Boostrap your SPA React project.</P>
+    <P>Boostrap your SPA React project</P>
   </div>
 );
 

@@ -9,7 +9,7 @@ const InstallationPage = () => (
     <P>
       Clone this{' '}
       <ExternalLink href="https://github.com/notAro14/webpack-react-boilerplate">
-        repo.
+        repo
       </ExternalLink>
     </P>
   </div>

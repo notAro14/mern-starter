@@ -17,10 +17,11 @@ const NavbarContainer = styled.nav`
 const Navigation = styled.ul`
   display: flex;
   justify-content: space-around;
-  width: 30%;
+  width: 250px;
   @media (max-width: 768px) {
-    width: 100%;
+    justify-content: space-between;
     padding: 1rem 0;
+    width: 100%;
   }
 `;
 

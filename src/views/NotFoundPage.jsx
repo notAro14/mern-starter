@@ -10,7 +10,9 @@ const NotFound = () => {
     <div>
       <Heading>Oops</Heading>
       <P>
-        It seems that the page at <strong>{pathname}</strong> does not exist.
+        It seems that the page at <strong>{pathname}</strong> does not exist
+      </P>
+      <P>
         Return to <Link to="/">Home</Link>
       </P>
     </div>
