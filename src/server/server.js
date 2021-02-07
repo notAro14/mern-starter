@@ -13,5 +13,6 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 app.listen(PORT, () =>
+  // eslint-disable-next-line
   console.log(`✨ Project is running at http://localhost:${PORT}/`)
 );
