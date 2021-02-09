@@ -23,7 +23,7 @@
     "react",
     "boilerplate"
   ],
-  "author": "Aro Andriamaro",
+  "author": "Aro Andriamaro <ni.aro.aina@gmail.com>",
   "license": "MIT",
   "devDependencies": {
     "@babel/core": "^7.12.10",
