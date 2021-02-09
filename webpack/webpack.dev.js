@@ -9,11 +9,11 @@ module.exports = () =>
     mode: 'development',
     devtool: 'inline-source-map',
     devServer: {
+      contentBase: path.resolve(__dirname, '..', 'dist'),
       historyApiFallback: true,
-      contentBase: path.resolve(__dirname, './dist'),
-      open: 'Google Chrome',
       hot: true,
       port: 4000,
+      publicPath: '/assets/',
     },
 
     module: {

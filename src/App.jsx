@@ -22,7 +22,7 @@ export default () => {
           <Switch>
             <Route exact path="/" component={HomePage} />
             <Route exact path="/installation" component={InstallationPage} />
-            <Route path="*" component={NotFoundPage} />
+            <Route component={NotFoundPage} />
           </Switch>
         </Suspense>
       </Layout>

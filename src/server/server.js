@@ -5,9 +5,9 @@ const PORT = process.env.PORT || 4000;
 const app = express();
 
 if (process.env.NODE_ENV === 'production') {
-  app.use(express.static(path.join(__dirname, '../../dist')));
+  app.use('/assets', express.static(path.join(__dirname, '../../dist')));
 
-  app.get('*', (_, res) => {
+  app.get('/*', (_, res) => {
     res.sendFile(path.join(__dirname, '../../dist', 'index.html'));
   });
 }
