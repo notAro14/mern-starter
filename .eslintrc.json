@@ -2,7 +2,8 @@
   "env": {
     "browser": true,
     "es2021": true,
-    "jest/globals": true
+    "jest/globals": true,
+    "node": true
   },
   "extends": [
     "airbnb",
@@ -27,6 +28,8 @@
     "jest/prefer-to-have-length": "warn",
     "jest/valid-expect": "error",
     "arrow-body-style": "off",
-    "react/jsx-props-no-spreading": "off"
+    "react/jsx-props-no-spreading": "off",
+    "import/prefer-default-export": "off",
+    "no-underscore-dangle": "off"
   }
 }
