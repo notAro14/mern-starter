@@ -1,7 +1,7 @@
 {
-  "name": "webpack-react-boilerplate",
+  "name": "mern-starter",
   "version": "1.0.0",
-  "description": "Webpack Boilerplate for React",
+  "description": "MERN starter",
   "private": true,
   "engines": {
     "node": "14.x",
@@ -23,9 +23,12 @@
     "postinstall": "husky install"
   },
   "keywords": [
-    "webpack",
+    "boilerplate",
+    "mern",
+    "mongodb",
     "react",
-    "boilerplate"
+    "starter",
+    "webpack"
   ],
   "author": "Aro Andriamaro <ni.aro.aina@gmail.com>",
   "license": "MIT",
