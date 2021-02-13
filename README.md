@@ -1,11 +1,32 @@
-# Webpack boilerplate for React
+# MERN starter
 
-Use Webpack 5 to kick off your SPA React projects
+Boilerplate for client-side rendered react app
+
+## Stack
+
+### Front
+
+- react 17
+- react-router-dom
+- styled-components
+
+### Back
+
+- node/express
+- mongodb/mongoose
+
+### Bundler and tools
+
+- webpack 5
+- nodemon
+- husky
+- lint-staged
 
 ## Pre requisites:
 
 - node
 - yarn
+- your mongodb uri -> create a `.env` file at folder root (cf `.env.example`)
 
 ## Install
 
@@ -42,15 +63,3 @@ yarn format
 ```bash
 yarn lint
 ```
-
-## Deploy
-
-### Without a server
-
-Deploy the static files in `dist/` folder at your prefered static hosting service (netlify, github pages, vercel, etc...).
-
-You just have to specify the build command which is `yarn build`
-
-### With a server
-
-Serve the files with Node. Refer to the `src/server/server.js` file. You can deploy to heroku.
