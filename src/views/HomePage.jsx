@@ -2,25 +2,7 @@ import React, { useState } from 'react';
 import P from '../components/P/P';
 import Heading from '../components/Heading/Heading';
 import Button from '../components/Button/Button';
-
-const PingData = ({ state }) => {
-  switch (state.status) {
-    case 'IDLE':
-      return null;
-    case 'PENDING':
-      return <P>Loading...</P>;
-    case 'SUCCESS':
-      return <P style={{ color: 'green' }}>{state.data.message}</P>;
-    case 'ERROR':
-      return (
-        <P role="alert" style={{ color: 'tomato' }}>
-          Oops some error occured: {state.error}
-        </P>
-      );
-    default:
-      throw new Error('Unhandled case in <PingData/>');
-  }
-};
+import PingData from '../components/PingData/PingData';
 
 const HomePage = () => {
   const [state, setState] = useState({
