@@ -1,4 +1,7 @@
 node_modules/
-dist
+dist/
+.eslintcache
 coverage/
 stats.json
+.DS_Store
+.env

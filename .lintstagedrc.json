@@ -1,4 +1,4 @@
 {
-  "*.{jsx,js}": "eslint --cache",
-  "*.{js,jsx,css,scss,sass,md,html}": "prettier --write"
+  "*.{jsx,js,ts,tsx}": "eslint --cache",
+  "*.{js,jsx,ts,tsx,css,scss,sass,md,html}": "prettier --write"
 }

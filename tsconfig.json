@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "allowJs": true,
+    "jsx": "react",
+    "module": "commonjs",
+    "noImplicitAny": false,
+    "outDir": "./dist/",
+    "sourceMap": true,
+    "strict": false,
+    "strictNullChecks": false,
+    "skipLibCheck": true,
+    "strictFunctionTypes": false,
+    "strictBindCallApply": false,
+    "target": "es5"
+  },
+  "include": ["./src/", "webpack.config.ts"]
+}
