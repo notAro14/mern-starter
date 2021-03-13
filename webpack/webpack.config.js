@@ -4,6 +4,7 @@ const path = require('path');
 // const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const HtmlWebpackHarddiskPlugin = require('html-webpack-harddisk-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 const { ProgressPlugin } = require('webpack');
 
 module.exports = {
@@ -21,12 +22,18 @@ module.exports = {
     new ProgressPlugin(),
     new HtmlWebpackPlugin({
       title: 'Webpack Boilerplate for React',
-      favicon: path.resolve(__dirname, '..', 'src', 'images', 'favicon.png'),
-      template: path.resolve(__dirname, '..', 'src', 'template.html'),
+      template: path.resolve(__dirname, '..', 'src', 'public', 'template.html'),
       filename: 'index.html',
       alwaysWriteToDisk: true,
     }),
     new HtmlWebpackHarddiskPlugin(),
+    new CopyPlugin({
+      patterns: [
+        {
+          from: path.resolve(__dirname, '..', 'src', 'public', 'favicons'),
+        },
+      ],
+    }),
   ],
   module: {
     rules: [
@@ -51,5 +58,9 @@ module.exports = {
   },
   resolve: {
     extensions: ['*', '.js', '.jsx'],
+    alias: {
+      '~components': path.resolve(__dirname, '..', 'src', 'components'),
+      '~public': path.resolve(__dirname, '..', 'src', 'public'),
+    },
   },
 };
