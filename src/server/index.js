@@ -2,7 +2,6 @@ import path from 'path';
 import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
-import mongoose from 'mongoose';
 
 import pingRoutes from './routes/ping';
 
@@ -10,7 +9,6 @@ dotenv.config();
 
 const isDev = process.env.NODE_ENV === 'development';
 const PORT = process.env.PORT || 4001;
-const { MONGO_URI } = process.env;
 
 const app = express();
 
@@ -30,23 +28,9 @@ if (!isDev) {
   });
 }
 
-mongoose
-  .connect(MONGO_URI, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  })
-  .then(
-    () =>
-      app.listen(PORT, () =>
-        // eslint-disable-next-line no-console
-        console.log(
-          `✨ ${
-            isDev ? 'API' : 'Project'
-          } is running at http://localhost:${PORT}/`
-        )
-      ),
-    // eslint-disable-next-line no-console
-    error => console.log(error)
-  );
-
-mongoose.set('useFindAndModify', false);
+app.listen(PORT, () =>
+  // eslint-disable-next-line no-console
+  console.log(
+    `✨ ${isDev ? 'API' : 'Project'} is running at http://localhost:${PORT}/`
+  )
+);
